@@ -784,5 +784,15 @@ into proprietary programs.  If your program is a subroutine library, you
 may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
-.
+.- name: Build And Deploy
+  id: builddeploy
+  uses: Azure/static-web-apps-deploy@v1
+  with:
+    azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_SALMON_FOREST_0290FD110 }}
+    repo_token: ${{ secrets.GITHUB_TOKEN }}
+    action: "upload"
+    app_location: "/" # App source code path
+    api_location: "" # Api source code path - optional
+    output_location: "build" # Built app content directory - optional
+    skip_deploy_on_missing_secrets: true
  
